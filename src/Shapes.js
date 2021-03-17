@@ -1,4 +1,4 @@
-const shapes = {
+let shapes = {
   myPan: {
     rectangle: {
       a: 0,
