@@ -1,8 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+
 //Database of shapes length
 import Shapes from "../Shapes";
 
+import CalcIngredient from "./CalcIngredient";
 //Styled Components
 import styled from "styled-components";
 
@@ -10,6 +13,8 @@ import ShapeImg from "../img/shapes-normal.png";
 import ShapeDimension from "../img/shapes-dimension.png";
 
 import {
+  Title,
+  Paragraph,
   SelectStyle,
   Pan,
   PanTitle,
@@ -18,7 +23,6 @@ import {
   SpanStyle,
   LabelStyle,
 } from "../style/Style";
-import Result from "./Result";
 
 const RecipePan = ({ areaRound, areaRectangle, shape }) => {
   const [shapeRecipe, setShapeRecipe] = useState("Rectangle");
@@ -37,7 +41,7 @@ const RecipePan = ({ areaRound, areaRectangle, shape }) => {
     setShow(false);
   }, [rectangleRecipe, roundRecipe]);
 
-  //calc area and clear other input field
+  //Calc area and clear other input field
   const aR = (name) => {
     Shapes.recipePan.round.a = 0;
     setAreaRectangleRecipe(name.a * name.b);
@@ -49,14 +53,12 @@ const RecipePan = ({ areaRound, areaRectangle, shape }) => {
     setAreaRoundRecipe(+((name.a * name.a * Math.PI) / 4).toFixed(1));
   };
 
-  // console.log(areaRoundRecipe)
-  let myArea = areaRound > 0 ? areaRound : areaRectangle;
-  let recipeArea = areaRoundRecipe > 0 ? areaRoundRecipe : areaRectangleRecipe;
+  let myArea = shape === "Round" ? areaRound : areaRectangle;
+  let recipeArea = shapeRecipe === "Round" ? areaRoundRecipe : areaRectangleRecipe;
 
-  // console.log(`1 ${myArea}` , `2 ${recipeArea}`)
-  let RatioNumber = (myArea / recipeArea).toFixed(2);
-  let Ratio = myArea > recipeArea ? "less" : "more";
-  // console.log(RatioNumber,'Result')
+  //Ratio
+  let RatioNumber = +(myArea / recipeArea).toFixed(2);
+  const Example = RatioNumber * 100;
 
   return (
     <Pan>
@@ -64,7 +66,7 @@ const RecipePan = ({ areaRound, areaRectangle, shape }) => {
       <img style={{ width: "5rem" }} src={ShapeImg} alt="" />
 
       <SelectStyleRecipe value={shapeRecipe} onChange={(e) => setShapeRecipe(e.target.value)}>
-        <option value="Rectangle">Rectangle</option>
+        <option value="Rectangle">Rectangle / Square</option>
         <option value="Round">Round</option>
       </SelectStyleRecipe>
       <img style={{ width: "5rem" }} src={ShapeDimension} alt="" />
@@ -101,7 +103,6 @@ const RecipePan = ({ areaRound, areaRectangle, shape }) => {
             }
           />
           <SpanStyle>cm</SpanStyle>
-          <h1>{areaRectangleRecipe}</h1>
         </InputContainer>
       )}
       {shapeRecipe === "Round" && (
@@ -115,28 +116,38 @@ const RecipePan = ({ areaRound, areaRectangle, shape }) => {
             value={roundRecipe.a}
             onChange={(e) => setRoundRecipe({ a: e.target.value })}
           />
-
           <SpanStyle>cm</SpanStyle>
-          <h1>{areaRoundRecipe}</h1>
         </InputContainer>
       )}
 
-      {/* <Result Ratio={Ratio} RatioNumber={RatioNumber}/> */}
-      <ButtonResult onClick={() => setShow(!show)}>Convert</ButtonResult>
+      <Link style={{ border: "none" }} to="result" smooth={true}>
+        <ButtonResult onClick={() => setShow(!show)}>Convert</ButtonResult>
+      </Link>
 
-      {show && (
-        <div>
-          <Title>Result</Title>
-          <Para>The ratio between tha pans is {RatioNumber}</Para>
-          <p>
-            That means that you need {100 * RatioNumber}% of the ingredients of the original recipe
-          </p>
-          <p>
-            Multiply the amounts of ingredients by the ratio yourself, or use the second part of our
-            calculator.
-          </p>
-        </div>
-      )}
+      <div id="result">
+        {show && RatioNumber > 0 && (
+          <div>
+            <ResultContainer>
+              <Title>Result</Title>
+              <ParagraphResult>
+                The ratio between tha pans is {RatioNumber} calculated on the pan's area. <br />
+                That means 100 g of ingredient in the recipe, for example , are{" "}
+                {Example > 1000 ? ` ${Example / 1000} Kg` : `${Example} g`} for your recipe . <br />
+                You can multiply the amounts of ingredients by the ratio yourself, or use the second
+                part of our calculator.
+              </ParagraphResult>
+            </ResultContainer>
+            <CalcIngredient RatioNumber={RatioNumber} />
+          </div>
+        )}
+        {show && isNaN(RatioNumber) | (RatioNumber === Infinity) && (
+          <div>
+            <p style={{ margin: "1rem  2rem ", textAlign: "center", lineHeight: "2rem" }}>
+              Something wrong, are you sure that you put all the value?
+            </p>
+          </div>
+        )}
+      </div>
     </Pan>
   );
 };
@@ -155,22 +166,28 @@ const InputStyleRecipe = styled(InputStyle)`
 const PanTitleRecipe = styled(PanTitle)`
   color: #2c8799;
 `;
-
-const Title = styled.h1`
-  color: red;
+const ParagraphResult = styled(Paragraph)`
+  margin: 0rem 2rem;
+  color: #2c8799;
+  text-align: center;
+  line-height: 3rem;
+  font-family: "Comfortaa", cursive;
 `;
 
-const Para = styled.p`
-  color: blue;
-`;
 const ButtonResult = styled.button`
   border: none;
-  margin-top: 5rem;
+  cursor: pointer;
+  margin: 5rem 0;
   font-family: "Finger Paint", cursive;
-
   font-size: 1.2rem;
   border-radius: 10px;
   background-color: #153747;
   padding: 0.5rem 4rem;
   color: white;
+`;
+
+const ResultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

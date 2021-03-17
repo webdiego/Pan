@@ -41,8 +41,11 @@ const CalculatorContainer = styled.div`
 
 `
 const Img = styled.img`
- /* width:35rem; */
+  margin-top:8rem;
+   width:55rem;  
  @media (max-width: 768px) {
-    width: 28rem;
+  margin-top:0rem;
+
+    width: 22rem;
   }
 `

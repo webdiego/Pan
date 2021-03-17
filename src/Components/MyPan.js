@@ -4,8 +4,8 @@ import RecipePan from "./RecipePan";
 //Database of shapes length
 import Shapes from "../Shapes";
 
-import ShapeImg from '../img/shapes-normal.png'
-import ShapeDimension from '../img/shapes-dimension.png'
+import ShapeImg from "../img/shapes-normal.png";
+import ShapeDimension from "../img/shapes-dimension.png";
 //Styled Components
 import styled from "styled-components";
 
@@ -19,7 +19,6 @@ import {
   LabelStyle,
 } from "../style/Style";
 
-
 //
 const MyPan = () => {
   const [shape, setShape] = useState("Rectangle");
@@ -29,36 +28,35 @@ const MyPan = () => {
   //ROUND
   const [round, setRound] = useState(Shapes.myPan.round);
   const [areaRound, setAreaRound] = useState(0);
-  
 
-  
-  const aR = (name) => {
+  const CalcAreaRectangle = (name) => {
     Shapes.myPan.round.a = 0;
     setAreaRectangle(name.a * name.b);
   };
-  // console.log(areaRectangle);
-  
-  const aC = (name) => {
+
+  const CalcAreaRound = (name) => {
     Shapes.myPan.rectangle.a = 0;
     Shapes.myPan.rectangle.b = 0;
     setAreaRound(+((name.a * name.a * Math.PI) / 4).toFixed(1));
   };
 
   useEffect(() => {
-    aR(rectangle);
-    aC(round);
+    CalcAreaRectangle(rectangle);
+    CalcAreaRound(round);
   }, [rectangle, round]);
+
+  
 
   return (
     <PanContainer>
       <Pan>
         <PanTitle>MY PAN</PanTitle>
-        <img style={{width:'5rem'}} src={ShapeImg} alt=""/>
+        <img style={{ width: "5rem" }} src={ShapeImg} alt="" />
         <SelectStyle value={shape} onChange={(e) => setShape(e.target.value)}>
           <option value="Rectangle">Rectangle / Square</option>
           <option value="Round">Round</option>
         </SelectStyle>
-        <img style={{width:'5rem'}} src={ShapeDimension} alt=""/>
+        <img style={{ width: "5rem" }} src={ShapeDimension} alt="" />
         {shape === "Rectangle" && (
           <InputContainer>
             <LabelStyle>Side A</LabelStyle>
@@ -91,10 +89,6 @@ const MyPan = () => {
               }
             />
             <SpanStyle>Cm</SpanStyle>
-
-            <h1>{areaRectangle}</h1> 
-
-            {/* <RecipePan areaRectangle={areaRectangle} shape={shape}  /> */}
           </InputContainer>
         )}
 
@@ -109,16 +103,11 @@ const MyPan = () => {
               value={round.a}
               onChange={(e) => setRound({ a: e.target.value })}
             />
-            {/* <button onClick={() => aC(round)}>a</button> */}
-
             <SpanStyle>cm</SpanStyle>
-            <h1>{areaRound}</h1> 
-            {/* <RecipePan areaRound={areaRound} shape={shape} /> */}
           </InputContainer>
         )}
       </Pan>
       <RecipePan areaRound={areaRound} areaRectangle={areaRectangle} shape={shape} />
-     
     </PanContainer>
   );
 };
@@ -126,15 +115,15 @@ const MyPan = () => {
 export default MyPan;
 
 const PanContainer = styled.div`
-   width:100%;
+  width: 50%;
   height: 100%;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-   /* margin-top:5rem;  */
 
   @media (max-width: 868px) {
     flex-direction: column;
+    width:100%;
   }
 `;

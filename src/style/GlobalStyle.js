@@ -29,6 +29,7 @@ input[type=number] {
 option{
   -moz-appearance: none;
   -webkit-appearance: none;
+  
 }
  `
 
