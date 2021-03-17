@@ -31,6 +31,11 @@ option{
   -webkit-appearance: none;
   
 }
+
+a{
+  text-decoration:none;
+  color:#173847;
+}
  `
 
  export default GlobalStyle;

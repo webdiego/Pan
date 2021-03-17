@@ -79,6 +79,7 @@ const RecipePan = ({ areaRound, areaRectangle, shape }) => {
             min="0"
             step="1"
             max="100"
+            required
             value={rectangleRecipe.a}
             onChange={(e) =>
               setRectangleRecipe({
@@ -94,6 +95,7 @@ const RecipePan = ({ areaRound, areaRectangle, shape }) => {
             min="0"
             step="1"
             max="100"
+            required
             value={rectangleRecipe.b}
             onChange={(e) =>
               setRectangleRecipe({
@@ -113,6 +115,7 @@ const RecipePan = ({ areaRound, areaRectangle, shape }) => {
             min="0"
             step="1"
             max="100"
+            required
             value={roundRecipe.a}
             onChange={(e) => setRoundRecipe({ a: e.target.value })}
           />

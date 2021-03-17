@@ -25,6 +25,7 @@ const CalcIngredient = ({ RatioNumber }) => {
           min="0"
           step=".01"
           max="1000"
+          required
         />
         <SelectMass value={mass} onChange={(e) => setMass(e.target.value)}>
           <option value="g">g</option>

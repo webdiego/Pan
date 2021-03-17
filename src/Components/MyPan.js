@@ -65,6 +65,7 @@ const MyPan = () => {
               min="0"
               step="1"
               max="100"
+              required
               value={rectangle.a}
               onChange={(e) =>
                 setRectangle({
@@ -81,6 +82,7 @@ const MyPan = () => {
               step="1"
               max="100"
               value={rectangle.b}
+              required
               onChange={(e) =>
                 setRectangle({
                   ...rectangle,
@@ -100,6 +102,7 @@ const MyPan = () => {
               min="0"
               step="1"
               max="100"
+              required
               value={round.a}
               onChange={(e) => setRound({ a: e.target.value })}
             />

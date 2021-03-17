@@ -7,10 +7,10 @@ const Calculator = () => {
   return ( 
     <CalculatorContainer>
       <Title>Calculator</Title>
-      <Paragraph>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, aliquam? Itaque, quo. Accusamus, possimus debitis? Autem quis praesentium provident aliquam!</Paragraph>
+      <Paragraph>In a few steps you are going to convert the amount of the ingredients of the recipe, based on his pan size with the size of your pan.</Paragraph>
 
       <HeaderCalculator >
-       <Img src={Crazy} alt=""/>
+       <Img src={Crazy} alt="img"/>
         <MyPan/>
       </HeaderCalculator>
 
