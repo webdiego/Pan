@@ -63,13 +63,14 @@ const HomeDescription = styled.div`
 `;
 const HomeTitle = styled(Title)`
   @media (max-width: 950px) {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    padding:0 5rem;
   }
 `;
 
 const HomeImgContainer = styled.div``;
 const HomeImg = styled.img`
-  margin-top: 5rem;
+  margin-top: 2rem;
   object-fit: cover;
   height: 30rem;
 
@@ -77,10 +78,10 @@ const HomeImg = styled.img`
     height: 20rem;
   }
   @media (max-width: 500px) {
-    height: 15rem;
+    height: 17rem;
   }
   @media (max-width: 380px) {
-    height: 12rem;
+    height: 13rem;
   }
 `;
 

@@ -1,6 +1,7 @@
 import Which from "../img/wich-tray.png";
 import styled from "styled-components";
 import { Title, Paragraph } from "../style/Style";
+import { Link } from "react-router-dom";
 const Why = () => {
   return (
     <div>
@@ -12,7 +13,7 @@ const Why = () => {
         </div>
         <WhyDescription>
           <Paragraph>
-            <SpanTitle>Pan</SpanTitle> as <SpanTitle>Table</SpanTitle> were born with the intention of make life
+            <SpanTitle>Pan</SpanTitle> as <a href="https://table-how-many-we-are.netlify.app/" ><SpanTitle>Table</SpanTitle></a> were born with the intention of make life
             easier between pans, sheets and calculators.
           </Paragraph>
 
@@ -35,11 +36,12 @@ export default Why;
 
 const WhyImg = styled.img`
   width: 40rem;
+  margin:2rem 0;
   @media (max-width: 660px) {
     width: 35rem;
   }
   @media (max-width: 543px) {
-    width: 27rem;
+    width: 22rem;
   }
   @media (max-width: 380px) {
     width: 20rem;
@@ -54,7 +56,7 @@ const WhyDescription = styled.div`
   @media (max-width: 960px) {
     margin-right: 0rem;
     text-align: center;
-    padding:1rem;
+    padding:.5rem;
   }
 `;
 const WhyContainer = styled.div`

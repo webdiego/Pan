@@ -15,6 +15,7 @@ select,input{
   -moz-appearance: none;
   -webkit-appearance: none;
   text-align:center;
+  background-color:white;
   
 }
 input::-webkit-outer-spin-button,

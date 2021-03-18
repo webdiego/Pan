@@ -21,7 +21,7 @@ const Nav = () => {
           {" "}
           <Link to="/calculator">Calculator</Link>
         </ListElement>
-        <ListElement style={{fontWeight:"bold", fontSize:"1.2rem"}}>
+        <ListElement style={{fontWeight:"bold", fontSize:"1rem"}}>
           {" "}
           <a href="https://table-how-many-we-are.netlify.app/">
             Table <img style={{width:"1rem"}} src={TableIcon} alt="" />
