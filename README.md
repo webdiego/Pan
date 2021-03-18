@@ -14,7 +14,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://pan-wich-pan.netlify.app/](https://pan-wich-pan.netlify.app/)
+- Live Site URL: [Pan](https://pan-wich-pan.netlify.app/)
 
 ## My process
 
