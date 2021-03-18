@@ -1,10 +1,11 @@
 
 
-## Overview
+# Overview
 
 ### The challenge
 
-Users should be able to:
+Users should be able to: 
+
 -Convert the ingredients given by a recipe that indicates the size of the pan, with the size of the user's pan.
 
 ### Screenshot
@@ -25,12 +26,12 @@ Users should be able to:
 
 ### What I learned
 My focus of this project was on practising React.
-I tried to recreate the website Table with Styled Component instead of CSS/sass
+I tried to recreate the website Table with Styled Component instead of using CSS/sass
 
 
 ### Continued development
 
-I understood that using react you must organize all the workflow even if the project is simple like this one and do not underestimate small details, even the smallest and most insignificant can become huge if you have not made the right work plan.. 
+I understood that using react you must organize all the workflow even if the project is simple like this one and do not underestimate small details, even the smallest and most insignificant can become huge if you have not made the right work plan.
 
 
 
