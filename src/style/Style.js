@@ -6,7 +6,7 @@ export const Title = styled.h1`
   margin: 3rem 0;
   text-align: center;
   @media (max-width: 960px) {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 `;
 export const Paragraph = styled.p`

@@ -15,16 +15,16 @@ const Home = () => {
       <HomeContainer>
         <HomeDescription>
           <HomeTitle>It's time to cook!</HomeTitle>
-          <h4 style={{ fontSize: "1.1rem" , fontFamily:"Comfortaa" }}>Which pan should I use?</h4>
+          <h4 style={{ fontSize: "1.2rem" , fontFamily:"Comfortaa" }}>Which pan should I use?</h4>
          <Link to="/why">
           <HomeButton>Learn More </HomeButton>
          
          </Link>
         </HomeDescription>
 
-        <HomeImgContainer className="header-img">
+        <div >
           <HomeImg src={HeaderImg} alt="img" />
-        </HomeImgContainer>
+        </div>
       </HomeContainer>
 
       <HomeTrustedContainer>
@@ -62,17 +62,19 @@ const HomeDescription = styled.div`
   margin: 2rem 0;
 `;
 const HomeTitle = styled(Title)`
+      font-size: 5rem;
+      margin:4rem 2rem 1rem 2rem;  
   @media (max-width: 950px) {
-    font-size: 3.5rem;
-    padding:0 5rem;
+    font-size: 4rem;
+    /* padding:0 5rem; */
   }
 `;
 
-const HomeImgContainer = styled.div``;
+
 const HomeImg = styled.img`
   margin-top: 2rem;
   object-fit: cover;
-  height: 30rem;
+  height: 32rem;
 
   @media (max-width: 660px) {
     height: 20rem;

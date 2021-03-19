@@ -1,7 +1,7 @@
 import Which from "../img/wich-tray.png";
 import styled from "styled-components";
 import { Title, Paragraph } from "../style/Style";
-import { Link } from "react-router-dom";
+
 const Why = () => {
   return (
     <div>
@@ -51,10 +51,8 @@ const WhyDescription = styled.div`
   width: 40rem;
   padding: 3rem;
   line-height: 3rem;
-  margin-right: 6rem;
 
   @media (max-width: 960px) {
-    margin-right: 0rem;
     text-align: center;
     padding:.5rem;
   }
