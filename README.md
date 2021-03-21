@@ -26,14 +26,9 @@ Users should be able to:
 
 ### What I learned
 My focus of this project was on practising React.
-I tried to recreate the website Table with Styled Component instead of using CSS/sass
+I tried to recreate the website Table with Styled Component instead of using CSS/sass.
 
-
-### Continued development
-
-I understood that using react you must organize all the workflow even if the project is simple like this one and do not underestimate small details, even the smallest and most insignificant can become huge if you have not made the right work plan.
-
-
+I've learned also how it is important to make a good work plan before make any development because in this project, even it was a simple one, I've had issues of doing it as I wanted in the beginning
 
 ## Author
 
