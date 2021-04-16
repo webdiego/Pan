@@ -28,7 +28,6 @@ Users should be able to:
 My focus of this project was on practising React.
 I tried to recreate the website Table with Styled Component instead of using CSS/sass.
 
-I've learned also how it is important to make a good work plan before make any development because in this project, even it was a simple one, I've had issues of doing it as I wanted in the beginning
 
 ## Author
 

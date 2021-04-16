@@ -35,7 +35,7 @@ const CalcIngredient = ({ RatioNumber }) => {
       {ingredientQuantity > 0 && (
         <ParagraphResult>
           The quantity of {ingredientName} for your recipe based on your pan is{" "}
-          {ingredientQuantity * RatioNumber} {mass}
+          {(ingredientQuantity * RatioNumber).toFixed(2)} {mass}
         </ParagraphResult>
       )}
     </CalcIngredientContainer>

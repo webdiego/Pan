@@ -128,7 +128,7 @@ const RecipePan = ({ areaRound, areaRectangle, shape }) => {
       </Link>
 
       <div id="result">
-        {show && RatioNumber > 0 && (
+        {show && RatioNumber > 0 && RatioNumber !== Infinity && (
           <div>
             <ResultContainer>
               <Title>Result</Title>
